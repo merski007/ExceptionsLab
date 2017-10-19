@@ -55,7 +55,7 @@ public class Employee {
      * @param daysVacation - cannot be less than 0 or greater than 28
      * @throws IllegalArgumentException if daysVacation is not in that range
      */
-    public final void setDaysVacation(int daysVacation) {
+    public final void setDaysVacation(int daysVacation) throws IllegalArgumentException {
         if(daysVacation < 0 || daysVacation >28) {
             throw new IllegalArgumentException("Sorry, days of vaction must be greater than 0 and less than 28. Please try again");
         }
@@ -87,7 +87,7 @@ public class Employee {
      * @param lastName - cannot be null or empty
      * @throws IllegalArgumentException if lastName is null or empty
      */
-    public final void setLastName(String lastName) {
+    public final void setLastName(String lastName) throws IllegalArgumentException{
         if(lastName == null || lastName.isEmpty()) {
             throw new IllegalArgumentException("Sorry, last name is mandatory. Please try again");
         }
@@ -103,7 +103,7 @@ public class Employee {
      * @param ssn - cannot be null, empty, or not equal to 11 characters
      * @throws IllegalArgumentException if ssn is null, empty or not equal to 11 characters (includes hyphens)
      */
-    public final void setSsn(String ssn) {
+    public final void setSsn(String ssn) throws IllegalArgumentException{
         if(ssn == null || ssn.isEmpty() || ssn.length() != 11) {
             throw new IllegalArgumentException("Sorry, SSN is mandatory and must be 11 characters with hypehns (ex. xxx-xx-xxxx). Please try again");
         }
