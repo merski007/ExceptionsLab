@@ -22,7 +22,12 @@ public class NameService {
         String lastName = null;
         
         // put your code here
+        String[] lastNameArray = fullName.split(" ");
+        if(lastNameArray.length != 2){
+            throw new IllegalArgumentException("name format must be 'First Last' name.");
+        }
         
+        lastName = lastNameArray[1];        
         return lastName;
     }
     
