@@ -18,13 +18,16 @@ public class NameService {
      * @throws YourCustomExceptionName if fullName is null or empty or has
      * fewer than two parts
      */
-    public String extractLastName(String fullName) {
+    public String extractLastName(String fullName) throws IllegalArgumentException {
         String lastName = null;
         
         // put your code here
         String[] lastNameArray = fullName.split(" ");
         if(lastNameArray.length != 2){
             throw new IllegalArgumentException("name format must be 'First Last' name.");
+        }
+        else if(lastNameArray[1].length() >= 5){
+            throw new MaximumLengthException();
         }
         
         lastName = lastNameArray[1];        

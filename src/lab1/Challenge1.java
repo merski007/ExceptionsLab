@@ -23,8 +23,14 @@ public class Challenge1 {
         Challenge1 app = new Challenge1();
         
         String fullName = JOptionPane.showInputDialog("Enter full name (use Format: first last):");
+        String msg = "";
+        try{
         String lastName = app.extractLastName(fullName);
-        String msg = "Your last name is: " + lastName;
+        msg = "Your last name is: " + lastName;
+        }
+        catch(IllegalArgumentException iae){
+            msg = iae.getMessage();
+        }
         JOptionPane.showMessageDialog(null, msg);
     }
     
@@ -37,7 +43,12 @@ public class Challenge1 {
         // The JOptionPane.showInputDialog is taking the users input
         // the code below only needs to extract the info, could look for a space in the data
         // Your code goes here.
+        String[] lastNameArray = fullName.split(" ");
+        if(lastNameArray.length != 2){
+            throw new IllegalArgumentException("name format must be 'First Last' name.");
+        }
         
+        lastName = lastNameArray[1];
         return lastName;
     }
 
