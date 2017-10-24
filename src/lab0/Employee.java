@@ -17,7 +17,7 @@ package lab0;
  */
 public class Employee {
 
-    public static final int MAX_VACATION_DAYS = 28;
+    private static final int MAX_VACATION_DAYS = 28;
     private String firstName;
     private String lastName;
     private String ssn;
@@ -56,7 +56,8 @@ public class Employee {
      * @throws IllegalArgumentException if daysVacation is not in that range
      */
     public final void setDaysVacation(int daysVacation) throws IllegalArgumentException {
-        if(daysVacation < 0 || daysVacation >28) {
+//        if(daysVacation < 0 || daysVacation >28) {
+        if(daysVacation < 0 || daysVacation > MAX_VACATION_DAYS) {    
             throw new IllegalArgumentException("Sorry, days of vaction must be greater than 0 and less than 28. Please try again");
         }
         this.daysVacation = daysVacation;
