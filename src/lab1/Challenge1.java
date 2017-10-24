@@ -34,7 +34,8 @@ public class Challenge1 {
     // it there.
     public String extractLastName(String fullName) {
         String lastName = null;
-        
+        // The JOptionPane.showInputDialog is taking the users input
+        // the code below only needs to extract the info, could look for a space in the data
         // Your code goes here.
         
         return lastName;
