@@ -46,6 +46,16 @@ public class Employee {
         setDaysVacation(daysVacation);
     }
 
+    public final boolean isFirstNameEvenLength(){
+        boolean result = false;
+        
+        if(firstName.length() % 2 == 0){
+            result = true;
+        }
+        
+        return result;
+    }
+    
     public final int getDaysVacation() {
         return daysVacation;
     }
@@ -68,7 +78,7 @@ public class Employee {
     }
 
     /**
-     * Mutates the first name.
+     * Mutates the first name and validates entries.
      * @param firstName - cannot be null or empty
      * @throws IllegalArgumentException if firstName is null or empty
      */
