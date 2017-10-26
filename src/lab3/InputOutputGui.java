@@ -24,9 +24,11 @@ public class InputOutputGui {
             msg = "Your last name is: " + lastName;
         }
 //        catch(IllegalArgumentException mle){
-        catch(MaximumLengthException mle){
-            msg = mle.getMessage();
-        }
+//        catch(MaximumLengthException mle){
+//            msg = mle.getMessage();
+//        }
+        //only need to use the 1 catch statment
+        //the JVM will know which error message to throw based on the error
         catch(IllegalArgumentException iae){
 //        catch(MaximumLengthException iae){    
             msg = iae.getMessage();
